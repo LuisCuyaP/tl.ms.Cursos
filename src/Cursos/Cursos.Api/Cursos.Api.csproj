@@ -20,5 +20,10 @@
     <ProjectReference Include="..\Cursos.Infrastructure\Cursos.Infrastructure.csproj" />
     <ProjectReference Include="..\Cursos.Application\Cursos.Application.csproj" />
   </ItemGroup>
-  
+
+  <ItemGroup>
+	<Protobuf Include="gRPC\cursos.proto" GrpcServices="Server" />	
+  </ItemGroup>
+
+
 </Project>
