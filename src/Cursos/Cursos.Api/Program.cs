@@ -1,11 +1,20 @@
 using Cursos.Api.Extensions;
+using Cursos.Api.gRPC;
 using Cursos.Application;
 using Cursos.Infrastructure;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddGrpc();
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.ListenLocalhost(9999, listenOptions => listenOptions.Protocols = HttpProtocols.Http1);
+    options.ListenLocalhost(5001, listenOptions => listenOptions.Protocols = HttpProtocols.Http2);
+});
 
 builder.Services.AddControllers();
 
@@ -22,5 +31,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseCustomExceptionHandler();
 app.MapControllers();
+
+app.MapGrpcService<CursosGrpcService>();
 
 app.Run();
