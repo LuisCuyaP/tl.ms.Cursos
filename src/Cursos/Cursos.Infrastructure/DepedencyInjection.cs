@@ -1,6 +1,8 @@
+using Cursos.Application.Services;
 using Cursos.Domain.Cursos;
 using Cursos.Infrastructure.Repositories;
 using Cursos.Infrastructure.Serializers;
+using Estudiantes.Infrastructure.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MongoDB.Bson;
@@ -41,8 +43,10 @@ public static class DepedencyInjection
         BsonSerializer.RegisterSerializer(new CapacidadCursoSerializer());
         BsonSerializer.RegisterSerializer(new NombreCursoSerializer());
         BsonSerializer.RegisterSerializer(new DescripcionCursoSerializer());
-
         BsonSerializer.RegisterSerializer(new GuidSerializer(GuidRepresentation.Standard));
+
+        services.AddScoped<IEventBus, RabbitMQEventBus>();
+        services.AddHostedService<RabbitMQEventListener>();
 
         return services;
     }

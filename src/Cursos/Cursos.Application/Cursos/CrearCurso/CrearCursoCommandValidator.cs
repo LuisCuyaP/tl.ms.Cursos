@@ -9,6 +9,5 @@ public class CrearCursoCommandValidator : AbstractValidator<CrearCursoCommand>
         RuleFor(c => c.NombreCurso).NotEmpty().WithMessage("El nombre del curso no puede ser vacio");
         RuleFor(c => c.DescripcionCurso).NotEmpty();
         RuleFor(c => c.CapacidadCurso).GreaterThan(0);
-
     }
 }
