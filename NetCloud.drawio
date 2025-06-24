@@ -1,0 +1,105 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0" version="26.2.14">
+  <diagram name="Page-1" id="mcjl2pPAwJM2Id3NjYbR">
+    <mxGraphModel dx="2463" dy="927" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="GNbimTHd53yO083XO9GB-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="GNbimTHd53yO083XO9GB-1" target="GNbimTHd53yO083XO9GB-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GNbimTHd53yO083XO9GB-1" value="Inicio" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-715" y="30" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="GNbimTHd53yO083XO9GB-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="GNbimTHd53yO083XO9GB-2" target="GNbimTHd53yO083XO9GB-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GNbimTHd53yO083XO9GB-2" value="Registro matricula (ms.Estudiantes) y se termina el request con 201 Created" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-750" y="130" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GNbimTHd53yO083XO9GB-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="GNbimTHd53yO083XO9GB-4" target="GNbimTHd53yO083XO9GB-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GNbimTHd53yO083XO9GB-4" value="Llega a MatriculaCreatedIntegrationEventHandler (ms.Cursos)" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-750" y="270" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GNbimTHd53yO083XO9GB-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="GNbimTHd53yO083XO9GB-6" target="GNbimTHd53yO083XO9GB-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GNbimTHd53yO083XO9GB-10" value="SI" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="GNbimTHd53yO083XO9GB-9">
+          <mxGeometry x="-0.4889" y="4" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GNbimTHd53yO083XO9GB-6" value="Tiene cupo Disponible" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-730" y="400" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="GNbimTHd53yO083XO9GB-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="GNbimTHd53yO083XO9GB-8" target="GNbimTHd53yO083XO9GB-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GNbimTHd53yO083XO9GB-13" value="luego ingresa a&amp;nbsp;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="GNbimTHd53yO083XO9GB-12">
+          <mxGeometry x="-0.3956" y="2" relative="1" as="geometry">
+            <mxPoint y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GNbimTHd53yO083XO9GB-8" value="RestarCupo (ms.Cursos), termina de ejecutar la clase MatriculaCreatedIntegrationEventHandler" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-750" y="570" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GNbimTHd53yO083XO9GB-15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="GNbimTHd53yO083XO9GB-11" target="GNbimTHd53yO083XO9GB-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GNbimTHd53yO083XO9GB-11" value="CursoConCupoDisponibleIntegrationEventHandler&lt;div&gt;(ms.Estudiantes)&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-750" y="710" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GNbimTHd53yO083XO9GB-17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="GNbimTHd53yO083XO9GB-14" target="GNbimTHd53yO083XO9GB-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GNbimTHd53yO083XO9GB-18" value="NO" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="GNbimTHd53yO083XO9GB-17">
+          <mxGeometry x="-0.4235" y="-4" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GNbimTHd53yO083XO9GB-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="GNbimTHd53yO083XO9GB-14" target="GNbimTHd53yO083XO9GB-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GNbimTHd53yO083XO9GB-23" value="SI" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="GNbimTHd53yO083XO9GB-22">
+          <mxGeometry x="0.4966" y="3" relative="1" as="geometry">
+            <mxPoint x="-50" y="-7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GNbimTHd53yO083XO9GB-14" value="Existe error al momento de ejecutarse la clase CursoConCupoDisponibleIntegrationEventHandler&lt;div&gt;cuando actualiza el estado de la matricula?(ms.Estudiantes)&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-730" y="840" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="GNbimTHd53yO083XO9GB-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="GNbimTHd53yO083XO9GB-16" target="GNbimTHd53yO083XO9GB-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GNbimTHd53yO083XO9GB-16" value="Actualiza el estado de la matricula con estado confirmado(ms.Estudiantes)" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-750" y="1010" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GNbimTHd53yO083XO9GB-19" value="FIN" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-730" y="1140" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="GNbimTHd53yO083XO9GB-25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="GNbimTHd53yO083XO9GB-21" target="GNbimTHd53yO083XO9GB-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GNbimTHd53yO083XO9GB-21" value="Ingresa a ms.Cursos(MatriculaUpdateFailedIntegrationEvent) - COMPENSACION(SAGA)" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-410" y="850" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GNbimTHd53yO083XO9GB-27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="GNbimTHd53yO083XO9GB-24" target="GNbimTHd53yO083XO9GB-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GNbimTHd53yO083XO9GB-24" value="Suma el cupo, osea devuelve el RestarCupo que se habia ejecutado" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-410" y="990" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GNbimTHd53yO083XO9GB-30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="GNbimTHd53yO083XO9GB-26" target="GNbimTHd53yO083XO9GB-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GNbimTHd53yO083XO9GB-26" value="Actualiza el estado de la matricula con estado error(ms.Estudiantes)" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-410" y="1120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GNbimTHd53yO083XO9GB-29" value="FIN" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-380" y="1210" width="60" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
