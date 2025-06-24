@@ -31,6 +31,8 @@ internal sealed class MatriculaCreatedIntegrationEventHandler : INotificationHan
 
         curso.Result.RestarCupo();
         await _cursoRepository.UpdateAsync(curso.Result.Id, curso.Result, cancellationToken);
+
+        // 2.  flujo: llega a este handler por el publish de ms.estudiantes/CrearMatriculaDomainEventHandler, y hago otro publish para enviarlo a ms.estudiantes  exactamente a CursoConCupoDisponibleIntegrationEventHandler
         _eventBus.Publish(new CursoConCupoDisponibleIntegrationEvent(notification.MatriculaId));
     }
 }

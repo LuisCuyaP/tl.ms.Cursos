@@ -1,4 +1,6 @@
 ﻿using Cursos.Application.Cursos.Events;
+using Cursos.Application.ExternalEvents.Matriculas.MatriculaCreada;
+using Cursos.Application.ExternalEvents.Matriculas.MatriculaError;
 using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -35,14 +37,14 @@ public class RabbitMQEventListener : BackgroundService
         };
         _connection = factory.CreateConnection();
         _channel = _connection.CreateModel();
-        _channel.ExchangeDeclare(exchange: "CursosEstudiantesExchange", type: ExchangeType.Fanout, durable: true);
-        _channel.QueueDeclare(queue: "EstudiantesQueue", durable: true, exclusive: false, autoDelete: false);
-        _channel.QueueBind(queue: "EstudiantesQueue", exchange: "CursosEstudiantesExchange", routingKey: string.Empty);
+        _channel.ExchangeDeclare(exchange: "CursosEstudiantesExchange", type: "fanout", durable: true);
+        _channel.QueueDeclare(queue: "CursosQueue", durable: true, exclusive: false, autoDelete: false);
+        _channel.QueueBind(queue: "CursosQueue", exchange: "CursosEstudiantesExchange", routingKey: "");
 
         _eventTypeMappings = new Dictionary<string, Type>
         {
-            { nameof(CursoSinCupoDisponibleIntegrationEvent), typeof(CursoSinCupoDisponibleIntegrationEvent) },
-            { nameof(CursoConCupoDisponibleIntegrationEvent), typeof(CursoConCupoDisponibleIntegrationEvent) },
+            { nameof(MatriculaCreatedIntegrationEvent), typeof(MatriculaCreatedIntegrationEvent) },
+            { nameof(MatriculaUpdateFailedIntegrationEvent), typeof(MatriculaUpdateFailedIntegrationEvent) },
             // Add other event types here as needed
         };
 
@@ -77,8 +79,15 @@ public class RabbitMQEventListener : BackgroundService
             
         };
 
-        _channel.BasicConsume(queue: "EstudiantesQueue", autoAck: true, consumer: consumer);
+        _channel.BasicConsume(queue: "CursosQueue", autoAck: true, consumer: consumer);
 
         return Task.CompletedTask;
+    }
+
+    public override void Dispose()
+    {
+        _channel?.Close();
+        _connection?.Close();
+        base.Dispose();
     }
 }

@@ -1,0 +1,13 @@
+# version: '3.4'
+
+# services:
+#   urlrabbit:
+#     container_name: urlrabbit
+#     hostname: intranet-mq
+#     environment:
+#       - RABBITMQ_DEFAULT_USER=guest
+#       - RABBITMQ_DEFAULT_PASS=guest
+#     restart: always
+#     ports:
+#       - "5672:5672"
+#       - "15672:15672"
