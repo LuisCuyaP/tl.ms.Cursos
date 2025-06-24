@@ -18,6 +18,7 @@ public class MatriculaUpdateFailedIntegrationEventHandler : INotificationHandler
         {
             return;
         }
+
         curso.SumarCupo();
         await _cursoRepository.UpdateAsync(curso.Id, curso, cancellationToken);
     }
